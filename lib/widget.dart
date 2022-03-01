@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class MyCarouselSlider extends CarouselSlider {
   MyCarouselSlider({
     required List<Widget> items,
-    required double width,
-    required double height,
+    required double width, // viewの幅
+    required double height, // カルーセルスライダーの高さ
     double viewportFraction = 0.8,
     int initialPage = 0,
     bool enableInfiniteScroll = true,
