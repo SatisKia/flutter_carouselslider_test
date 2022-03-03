@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class MyCarouselSlider extends CarouselSlider {
   MyCarouselSlider({
+    Key? key,
     required List<Widget> items,
     required double width, // viewの幅
     required double height, // カルーセルスライダーの高さ
@@ -15,8 +16,8 @@ class MyCarouselSlider extends CarouselSlider {
     Curve autoPlayCurve = Curves.fastOutSlowIn,
     required void Function(int) onPageChanged,
     CarouselController? carouselController,
-    Key? key
-  }) : super(key: key,
+  }) : super(
+    key: key,
     items: items,
     options: CarouselOptions(
         aspectRatio: width / height,
@@ -38,7 +39,12 @@ class MyCarouselSlider extends CarouselSlider {
 }
 
 class MyCarouselController extends InkWell {
-  MyCarouselController({required Color color, required void Function() onTap, Key? key}) : super(key: key,
+  MyCarouselController( {
+    Key? key,
+    required Color color,
+    required void Function() onTap,
+  } ) : super(
+    key: key,
     onTap: onTap,
     child: Container(
       width: 10,
