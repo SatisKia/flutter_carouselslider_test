@@ -14,6 +14,7 @@ class MyCarouselSlider extends CarouselSlider {
     Duration autoPlayInterval = const Duration(seconds: 4),
     Duration autoPlayAnimationDuration = const Duration(milliseconds: 800),
     Curve autoPlayCurve = Curves.fastOutSlowIn,
+    bool enlargeCenterPage = false,
     required void Function(int) onPageChanged,
     CarouselController? carouselController,
   }) : super(
@@ -28,6 +29,7 @@ class MyCarouselSlider extends CarouselSlider {
         autoPlayInterval: autoPlayInterval,
         autoPlayAnimationDuration: autoPlayAnimationDuration,
         autoPlayCurve: autoPlayCurve,
+        enlargeCenterPage: enlargeCenterPage,
         onPageChanged: (page, reason) {
           if( reason != CarouselPageChangedReason.controller ) {
             onPageChanged(page);
